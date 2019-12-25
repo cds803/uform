@@ -12,6 +12,11 @@ export const FormLayout = createVirtualBox<IFormItemTopProps>(
     const children =
       isInline || props.className || props.style ? (
         <div
+
+          // @bee 蜂巢可视化定制-START
+          {...props}
+          // @bee 蜂巢可视化定制-END
+
           className={cls(props.className, {
             'ant-form ant-form-inline': isInline
           })}

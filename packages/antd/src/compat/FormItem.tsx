@@ -88,6 +88,13 @@ export const CompatAntdFormItem: React.FC<ICompatItemProps> = props => {
   const status = computeStatus(props)
   const extra = computeExtra(props)
   const itemProps = computeSchemaExtendProps(props)
+
+  // @bee 蜂巢可视化定制-START
+  const xProps = props.props['x-props'] || {}
+  itemProps['data-comp-id'] = props.name
+  itemProps['data-comp-type'] = xProps['data-comp-type']
+  // @bee 蜂巢可视化定制-END
+
   const outerFormItemProps = useContext(FormItemPropsContext)
   return (
     <Form.Item
